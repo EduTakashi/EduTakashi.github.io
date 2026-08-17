@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Computação Visual</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --text: #e7e9ec;
+    --muted: #8a919c;
+    --green: #37d67a;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.75;
+  }
+
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 3.5rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .rule {
+    height: 1px;
+    background: var(--green);
+    opacity: 0.4;
+    margin: 3.5rem 0;
+    border: none;
+  }
+
+  section {
+    margin-bottom: 1rem;
+  }
+
+  .q {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 1.08rem;
+    margin: 0 0 1rem;
+    color: var(--text);
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 480px) {
+    main { padding: 3.5rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Diário da disciplina, Post 01</div>
+
+  <h1>Blog Computação Visual</h1>
+
+  <section>
+    <div class="q">O que você achava que veria na disciplina?</div>
+    <p>No começo eu pensava que a disciplina fosse falar sobre imagens e pixels de um jeito bem mais simples, parecido com front-end. Eu imaginei aulas focadas na parte visual das telas, tipo como os elementos aparecem, como se organizam e como se comportam numa página ou num aplicativo.</p>
+    <p>Eu esperava que o foco fosse mais no resultado final, aquilo que a gente vê e usa direto na tela, e não tanto em como esse resultado é construído por trás. Pensei que seria algo mais parecido com design de interface do que com programação gráfica de verdade.</p>
+    <p>Também achei que fosse algo mais leve, mais visual mesmo, sem entrar muito em detalhes técnicos de como as imagens são feitas ou processadas por dentro.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="q">O que você entendeu que estudaremos?</div>
+    <p>Depois das primeiras aulas percebi que o assunto é bem mais técnico do que eu imaginava. Vamos trabalhar com renderização 3D usando bibliotecas mais baixo nível, como SDL e OpenGL, que servem para construir a imagem do zero e não só mostrar ela pronta na tela.</p>
+    <p>Entendi também que vamos estudar imagens de um jeito mais profundo, incluindo a parte de RGB, ou seja, como as cores são formadas e mexidas pixel por pixel. Isso é bem diferente do que eu tinha em mente no início, que era mais sobre a parte visual das telas.</p>
+    <p>No fim das contas, percebi que a disciplina vai muito além do que aparece pronto na tela. Ela entra na parte de como tudo isso é montado por dentro, desde a cor de cada pixel até a construção de objetos em três dimensões.</p>
+  </section>
+
+</main>
+</body>
+</html>
