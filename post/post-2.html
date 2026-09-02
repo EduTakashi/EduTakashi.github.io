@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Computação Visual</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --text: #e7e9ec;
+    --muted: #8a919c;
+    --green: #37d67a;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.75;
+  }
+
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 3.5rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .rule {
+    height: 1px;
+    background: var(--green);
+    opacity: 0.4;
+    margin: 3.5rem 0;
+    border: none;
+  }
+
+  section {
+    margin-bottom: 1rem;
+  }
+
+  .q {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 1.08rem;
+    margin: 0 0 1rem;
+    color: var(--text);
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    margin: 0;
+    padding-left: 1.3rem;
+  }
+
+  li {
+    font-size: 1.08rem;
+    margin-bottom: 1.5rem;
+  }
+
+  li:last-child { margin-bottom: 0; }
+
+  .book-title {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .book-author {
+    color: var(--muted);
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    main { padding: 3.5rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Diário da disciplina, Post 02</div>
+
+  <h1>Blog Computação Visual</h1>
+
+  <section>
+    <div class="q">Sobre OpenGL</div>
+    <p>OpenGL é uma biblioteca gráfica usada para criar imagens 2D e 3D direto na placa de vídeo do computador. Diferente de ferramentas mais prontas, ela trabalha em um nível bem mais baixo, ou seja, o programador precisa lidar com detalhes que normalmente ficam escondidos em outros programas, como a posição de cada vértice, a cor de cada ponto e como a luz se comporta na cena.</p>
+    <p>Uma coisa que me chamou atenção é que o OpenGL não desenha nada sozinho. Ele só oferece os comandos, e quem decide como tudo vai se encaixar é quem está programando. Isso explica por que a disciplina começa entrando tanto em detalhes técnicos, já que boa parte do trabalho é entender como construir a imagem passo a passo, em vez de usar algo já pronto.</p>
+    <p>Também aprendi que o OpenGL é usado até hoje em jogos, softwares de modelagem e simulações, mesmo com a existência de bibliotecas mais modernas. Isso mostra que entender a base dele ajuda a entender como praticamente qualquer sistema gráfico funciona por trás dos panos.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="q">Sobre os livros recomendados</div>
+    <p>O professor indicou dois livros para acompanhar o conteúdo da disciplina. Um foca mais em imagens já prontas e como tratá-las, e o outro foca mais na parte de construir imagens do zero.</p>
+    <ul>
+      <li>
+        <span class="book-title">Processamento Digital de Imagens</span>
+        <span class="book-author">3ª edição</span>
+        Esse livro trata de como imagens digitais são analisadas e melhoradas depois de já terem sido capturadas, como ajustar contraste, remover ruído, reconhecer formas e outras técnicas usadas em fotos, exames médicos e câmeras em geral.
+      </li>
+      <li>
+        <span class="book-title">Computação Gráfica: Teoria e Prática, vol. 2</span>
+        <span class="book-author">Eduardo Azevedo, Aura Conci e Fabiana Leta</span>
+        Esse segundo volume entra mais na parte de gerar imagens do zero, unindo teoria e prática de computação gráfica com noções que se conectam bastante ao que estamos vendo com OpenGL, já que fala sobre como imagens são construídas e não só tratadas depois de prontas.
+      </li>
+    </ul>
+    <p>Pretendo usar os dois como apoio ao longo do semestre, um pra entender melhor a parte de imagem já existente e o outro pra acompanhar a parte de renderização que estamos vendo em aula.</p>
+  </section>
+
+</main>
+</body>
+</html>
