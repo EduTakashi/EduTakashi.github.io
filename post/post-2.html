@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Computação Visual</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --text: #e7e9ec;
+    --muted: #8a919c;
+    --green: #37d67a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.75;
+  }
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  h1 {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 3.5rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .rule {
+    height: 1px;
+    background: var(--green);
+    opacity: 0.4;
+    margin: 3.5rem 0;
+    border: none;
+  }
+  section {
+    margin-bottom: 1rem;
+  }
+  .q {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+  p {
+    font-size: 1.08rem;
+    margin: 0 0 1rem;
+    color: var(--text);
+  }
+  p:last-child { margin-bottom: 0; }
+  code {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    background: rgba(55, 214, 122, 0.12);
+    color: var(--green);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+  .nav-back {
+    display: inline-block;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--green);
+    text-decoration: none;
+    margin-top: 3.5rem;
+  }
+  .nav-back:hover { text-decoration: underline; }
+  @media (max-width: 480px) {
+    main { padding: 3.5rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Diário da disciplina, Post 03</div>
+  <h1>Blog Computação Visual</h1>
+
+  <section>
+    <div class="q">O que são as transformações de intensidade?</div>
+    <p>Nessa aula aprendi que as transformações de intensidade fazem parte do processamento de imagens no domínio espacial, ou seja, trabalham diretamente em cima dos pixels da imagem. A ideia central é bem simples de entender: existe uma função <code>s = T(r)</code>, onde <code>r</code> é a intensidade do pixel de entrada e <code>s</code> é a intensidade do pixel de saída depois da transformação.</p>
+    <p>O que mais chamou minha atenção foi perceber que esse tipo de operação é ponto a ponto, cada pixel é processado individualmente, sem olhar para os vizinhos. Isso é diferente da filtragem espacial, que vai usar a vizinhança do pixel (tipo uma máscara 3x3) para calcular o resultado. Entender essa diferença ajudou bastante a organizar na cabeça os próximos assuntos da disciplina.</p>
+    <p>Também vi que existem três grandes famílias dessas transformações: as lineares (como o negativo da imagem), as logarítmicas (que expandem tons escuros e comprimem tons claros) e as de potência, também chamadas de correção gama.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="q">O que mais me chamou atenção nessa aula?</div>
+    <p>O exemplo que mais fez sentido pra mim foi o da correção gama. Descobri que boa parte dos dispositivos de captura e exibição de imagem (câmeras, monitores) não respondem de forma linear à luz, e sim seguindo uma lei de potência. Por isso, se a imagem não passar por uma correção gama antes de ser exibida, ela pode aparecer mais escura ou mais clara do que deveria, meio "lavada" ou perdendo contraste em áreas específicas.</p>
+    <p>Outro ponto que achei bem interessante foi o fatiamento por planos de bits. A ideia de que uma imagem de 8 bits é, na verdade, formada por 8 "camadas" binárias sobrepostas (do bit mais significativo ao menos significativo) foi algo que eu nunca tinha parado pra pensar. Faz total sentido que os planos mais significativos carreguem a maior parte da informação visual da imagem, enquanto os menos significativos parecem quase ruído quando vistos isoladamente.</p>
+    <p>No fim, o que fica dessa aula pra mim é que uma imagem digital tem muito mais estrutura matemática por trás do que parece à primeira vista. Uma operação aparentemente simples, como inverter as cores ou clarear uma foto escura, na verdade é resultado de uma função de transformação bem definida, com propósito e efeito específico sobre os níveis de intensidade.</p>
+  </section>
+
+  <a class="nav-back" href="post2.html">&larr; Post anterior</a>
+</main>
+</body>
+</html>
