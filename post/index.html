@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Computação Visual</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --text: #e7e9ec;
+    --muted: #8a919c;
+    --green: #37d67a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.75;
+  }
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  h1 {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .subtitle {
+    font-size: 1.08rem;
+    color: var(--muted);
+    margin: 0 0 3.5rem;
+  }
+  .rule {
+    height: 1px;
+    background: var(--green);
+    opacity: 0.4;
+    margin: 2.5rem 0;
+    border: none;
+  }
+  .post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .post-item {
+    margin-bottom: 2rem;
+  }
+  .post-item a {
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+  }
+  .post-item .num {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .post-item .title {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .post-item .desc {
+    font-size: 1rem;
+    color: var(--muted);
+    margin: 0;
+  }
+  .post-item a:hover .title {
+    color: var(--green);
+  }
+  @media (max-width: 480px) {
+    main { padding: 3.5rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Diário da disciplina</div>
+  <h1>Blog Computação Visual</h1>
+  <p class="subtitle">Anotações e reflexões sobre a disciplina de Computação Visual.</p>
+
+  <hr class="rule">
+
+  <ul class="post-list">
+    <li class="post-item">
+      <a href="post/post-1.html">
+        <span class="num">Post 01</span>
+        <div class="title">Primeiras impressões da disciplina</div>
+        <p class="desc">O que eu esperava ver na disciplina e o que realmente entendi que vamos estudar.</p>
+      </a>
+    </li>
+    <li class="post-item">
+      <a href="post/post-2.html">
+        <span class="num">Post 02</span>
+        <div class="title">Post 02</div>
+        <p class="desc">Continuação do diário da disciplina.</p>
+      </a>
+    </li>
+    <li class="post-item">
+      <a href="post/post-3.html">
+        <span class="num">Post 03</span>
+        <div class="title">Transformações de Intensidade</div>
+        <p class="desc">Negativo, log, correção gama e fatiamento por planos de bits.</p>
+      </a>
+    </li>
+  </ul>
+</main>
+</body>
+</html>
