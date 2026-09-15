@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Computação Visual</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --text: #e7e9ec;
+    --muted: #8a919c;
+    --green: #37d67a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.75;
+  }
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  h1 {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 3.5rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .rule {
+    height: 1px;
+    background: var(--green);
+    opacity: 0.4;
+    margin: 3.5rem 0;
+    border: none;
+  }
+  section {
+    margin-bottom: 1rem;
+  }
+  .q {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+  p {
+    font-size: 1.08rem;
+    margin: 0 0 1rem;
+    color: var(--text);
+  }
+  p:last-child { margin-bottom: 0; }
+  code {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    background: rgba(55, 214, 122, 0.12);
+    color: var(--green);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+  .video-box {
+    border: 1px solid rgba(55, 214, 122, 0.35);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .video-box .label {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .video-box a {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .video-box a:hover { color: var(--green); }
+  .nav-back {
+    display: inline-block;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--green);
+    text-decoration: none;
+    margin-top: 3.5rem;
+  }
+  .nav-back:hover { text-decoration: underline; }
+  @media (max-width: 480px) {
+    main { padding: 3.5rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Diário da disciplina, Post 04</div>
+  <h1>Blog Computação Visual</h1>
+
+  <section>
+    <div class="q">Um vídeo que assisti essa semana</div>
+    <p>Essa semana, além do conteúdo da aula, assisti um vídeo curto do Code.org chamado <strong>"Images, Pixels and RGB"</strong>, apresentado pelo Kevin Systrom, um dos cofundadores do Instagram. Achei bem interessante porque ele explica de um jeito bem direto e visual algo que estamos vendo na disciplina: como uma imagem digital nada mais é do que uma grade enorme de pixels, e cada pixel carrega um valor de cor definido pela combinação de vermelho, verde e azul (RGB).</p>
+    <div class="video-box">
+      <span class="label">Vídeo assistido</span>
+      <a href="https://youtu.be/15aqFQQVBWU" target="_blank" rel="noopener">Images, Pixels and RGB — Code.org (Kevin Systrom)</a>
+    </div>
+    <p>O que mais me chamou atenção foi como o vídeo conecta um conceito que parece simples (uma imagem é feita de pixels coloridos) com a ideia de que, no fundo, tudo isso é número. Cada pixel guarda três valores numéricos, um pra cada canal de cor, e é justamente em cima desses números que as transformações de intensidade que vimos em aula atuam.</p>
+    <p>Ver isso explicado de forma tão simples, vindo de alguém que construiu um produto inteiro (o Instagram) em cima da manipulação de imagens, ajudou a enxergar de um jeito mais concreto por que entender pixel e intensidade é importante na prática, e não só na teoria da disciplina.</p>
+  </section>
+
+  <a class="nav-back" href="post-3.html">&larr; Post anterior</a>
+</main>
+</body>
+</html>
