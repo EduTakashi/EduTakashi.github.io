@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Computação Visual</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --text: #e7e9ec;
+    --muted: #8a919c;
+    --green: #37d67a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.75;
+  }
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  h1 {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 3.5rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .rule {
+    height: 1px;
+    background: var(--green);
+    opacity: 0.4;
+    margin: 3.5rem 0;
+    border: none;
+  }
+  section {
+    margin-bottom: 1rem;
+  }
+  .q {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+  p {
+    font-size: 1.08rem;
+    margin: 0 0 1rem;
+    color: var(--text);
+  }
+  p:last-child { margin-bottom: 0; }
+  code {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    background: rgba(55, 214, 122, 0.12);
+    color: var(--green);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+  .video-box {
+    border: 1px solid rgba(55, 214, 122, 0.35);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .video-box .label {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .video-box a {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .video-box a:hover { color: var(--green); }
+  .nav-back {
+    display: inline-block;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--green);
+    text-decoration: none;
+    margin-top: 3.5rem;
+  }
+  .nav-back:hover { text-decoration: underline; }
+  @media (max-width: 480px) {
+    main { padding: 3.5rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Diário da disciplina, Post 05</div>
+  <h1>Blog Computação Visual</h1>
+
+  <section>
+    <div class="q">Um vídeo curioso sobre luz e sombra em gráficos</div>
+    <p>Essa semana assisti um vídeo do canal <strong>Computerphile</strong> chamado <strong>"Lights and Shadows in Graphics"</strong>, onde o John Chapman explica, de um jeito bem descontraído (literalmente apagando as luzes do estúdio no vídeo), como o computador decide se um pixel deve aparecer claro ou escuro dependendo da posição da luz na cena.</p>
+    <div class="video-box">
+      <span class="label">Vídeo assistido</span>
+      <a href="https://www.youtube.com/watch?v=LUjXAoP5GG0" target="_blank" rel="noopener">Lights and Shadows in Graphics — Computerphile</a>
+    </div>
+    <p>Achei bem interessante a forma como ele simplifica o problema: no fundo, tudo se resume a calcular o ângulo entre a superfície e a direção da luz, e usar esse cálculo pra decidir a intensidade que aquele pixel vai receber. É basicamente matemática de vetores aplicada pixel a pixel, algo que conversa direto com o que vimos em aula sobre funções de transformação de intensidade, só que aqui a "intensidade de saída" depende também da geometria da cena e não só do valor de entrada.</p>
+    <p>O que fica dessa semana é essa sensação de que, por trás de uma imagem 3D "bonita" e realista, tem sempre uma conta simples rodando pra cada pixel individualmente. Gostei de ver o assunto explicado fora do contexto de sala de aula, de um jeito mais leve e com exemplos visuais bem diretos.</p>
+  </section>
+
+  <a class="nav-back" href="post-4.html">&larr; Post anterior</a>
+</main>
+</body>
+</html>
