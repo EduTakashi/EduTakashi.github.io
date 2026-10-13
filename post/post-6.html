@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Computação Visual</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --text: #e7e9ec;
+    --muted: #8a919c;
+    --green: #37d67a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.75;
+  }
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  h1 {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 3.5rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .rule {
+    height: 1px;
+    background: var(--green);
+    opacity: 0.4;
+    margin: 3.5rem 0;
+    border: none;
+  }
+  section {
+    margin-bottom: 1rem;
+  }
+  .q {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+  p {
+    font-size: 1.08rem;
+    margin: 0 0 1rem;
+    color: var(--text);
+  }
+  p:last-child { margin-bottom: 0; }
+  code {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    background: rgba(55, 214, 122, 0.12);
+    color: var(--green);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+  .video-box {
+    border: 1px solid rgba(55, 214, 122, 0.35);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .video-box .label {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .video-box a {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .video-box a:hover { color: var(--green); }
+  .nav-back {
+    display: inline-block;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--green);
+    text-decoration: none;
+    margin-top: 3.5rem;
+  }
+  .nav-back:hover { text-decoration: underline; }
+  @media (max-width: 480px) {
+    main { padding: 3.5rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Diário da disciplina, Post 06</div>
+  <h1>Blog Computação Visual</h1>
+
+  <section>
+    <div class="q">Como o computador "enxerga" uma borda?</div>
+    <p>Essa semana assisti um vídeo do canal <strong>Computerphile</strong> chamado <strong>"Finding the Edges (Sobel Operator)"</strong>, onde o Dr. Mike Pound explica como um computador decide o que é uma borda numa imagem. Pra gente é óbvio: o olho acha o contorno de um objeto sem esforço. Já pro computador, só existe uma grade de números, e a pergunta passa a ser "em que ponto essa grade muda de forma brusca?".</p>
+    <div class="video-box">
+      <span class="label">Vídeo assistido</span>
+      <a href="https://www.youtube.com/watch?v=uihBwtPIBxM" target="_blank" rel="noopener">Finding the Edges (Sobel Operator) — Computerphile</a>
+    </div>
+    <p>O que mais me chamou atenção foi perceber que uma borda, no fim das contas, é só uma região onde a intensidade dos pixels muda rápido, de escuro pra claro ou o contrário. O operador Sobel mede essa mudança olhando para os vizinhos de cada pixel, usando duas pequenas matrizes 3x3: uma que detecta variação na horizontal e outra na vertical. Depois as duas respostas são combinadas e o resultado é uma imagem onde os pixels mais claros são justamente os contornos.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="q">Conexão com o que vimos em aula</div>
+    <p>Esse vídeo fez muito sentido logo depois da aula de transformações de intensidade. Lá a gente viu que funções como negativo, log e gama trabalham ponto a ponto: cada pixel de saída depende só do pixel de entrada, sem olhar pra mais ninguém. O slide já avisava que existe o outro lado, a filtragem espacial, que opera na vizinhança de cada pixel e é usada em coisas como realce de imagens e detecção de bordas.</p>
+    <p>Ver o Sobel funcionando foi justamente o exemplo concreto desse segundo tipo. Em vez de uma função <code>s = T(r)</code> aplicada a um valor só, a máscara 3x3 percorre a imagem inteira, pixel por pixel, e cada resultado depende de uma pequena região ao redor. Pra mim ficou bem mais claro por que a aula separou os dois grupos de técnicas.</p>
+    <p>Gostei também de ver como uma ideia tão simples, uma conta com poucos números em cada vizinhança, é a base de coisas que parecem bem mais sofisticadas, como reconhecer objetos e separar o fundo de uma imagem.</p>
+  </section>
+
+  <a class="nav-back" href="post-5.html">&larr; Post anterior</a>
+</main>
+</body>
+</html>
