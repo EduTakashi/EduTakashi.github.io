@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Computação Visual</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --text: #e7e9ec;
+    --muted: #8a919c;
+    --green: #37d67a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.75;
+  }
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  h1 {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 3.5rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .rule {
+    height: 1px;
+    background: var(--green);
+    opacity: 0.4;
+    margin: 3.5rem 0;
+    border: none;
+  }
+  section {
+    margin-bottom: 1rem;
+  }
+  .q {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+  p {
+    font-size: 1.08rem;
+    margin: 0 0 1rem;
+    color: var(--text);
+  }
+  p:last-child { margin-bottom: 0; }
+  code {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    background: rgba(55, 214, 122, 0.12);
+    color: var(--green);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+  .video-box {
+    border: 1px solid rgba(55, 214, 122, 0.35);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .video-box .label {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .video-box a {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .video-box a:hover { color: var(--green); }
+  .nav-back {
+    display: inline-block;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--green);
+    text-decoration: none;
+    margin-top: 3.5rem;
+  }
+  .nav-back:hover { text-decoration: underline; }
+  @media (max-width: 480px) {
+    main { padding: 3.5rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Diário da disciplina, Post 07</div>
+  <h1>Blog Computação Visual</h1>
+
+  <section>
+    <div class="q">O que tem por trás de um filtro de foto?</div>
+    <p>Essa semana assisti outro vídeo do <strong>Computerphile</strong> com o Dr. Mike Pound, o mesmo do vídeo de bordas do post passado. Esse se chama <strong>"How Blurs &amp; Filters Work"</strong> e mostra o que acontece, no nível do pixel, quando a gente aplica um desfoque ou um filtro numa imagem, aqueles efeitos que a gente usa todo dia em app de câmera e rede social.</p>
+    <div class="video-box">
+      <span class="label">Vídeo assistido</span>
+      <a href="https://www.youtube.com/watch?v=C_zFhWdM4ic" target="_blank" rel="noopener">How Blurs &amp; Filters Work — Computerphile</a>
+    </div>
+    <p>O que mais me chamou atenção foi descobrir que o desfoque é uma conta bem simples: o novo valor de cada pixel vira uma média dos pixels que estão em volta dele. Quanto maior a região considerada, mais borrada a imagem fica. Os detalhes finos, que são mudanças bruscas entre um pixel e o vizinho, vão sendo "diluídos" na média.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="q">Conexão com os posts anteriores</div>
+    <p>Esse vídeo fechou um ciclo pra mim. No post 3 eu falei das transformações de intensidade, que olham um pixel de cada vez. No post 6, com o Sobel, apareceu a ideia de olhar a vizinhança usando uma máscara 3x3. Aqui a mesma ideia volta, só que com outro objetivo: em vez de destacar as bordas, a máscara suaviza a imagem. Muda os números da máscara, muda o efeito.</p>
+    <p>Isso também me lembrou do vídeo do Kevin Systrom no post 4. Ele falava de filtros do Instagram, e agora dá pra imaginar o que está rolando por dentro: uma imagem que é só uma grade de números, uma máscara passando por cada pixel e um resultado novo calculado a partir da vizinhança.</p>
+    <p>Fica a sensação de que boa parte do que parece "mágica" num editor de imagem é uma mesma operação repetida milhões de vezes, pixel por pixel, só variando os números usados. Achei isso bem mais acessível do que eu imaginava no começo da disciplina.</p>
+  </section>
+
+  <a class="nav-back" href="post-6.html">&larr; Post anterior</a>
+</main>
+</body>
+</html>
