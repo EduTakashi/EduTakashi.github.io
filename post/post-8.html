@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Computação Visual</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --text: #e7e9ec;
+    --muted: #8a919c;
+    --green: #37d67a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.75;
+  }
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  h1 {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 3.5rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .rule {
+    height: 1px;
+    background: var(--green);
+    opacity: 0.4;
+    margin: 3.5rem 0;
+    border: none;
+  }
+  section {
+    margin-bottom: 1rem;
+  }
+  .q {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+  p {
+    font-size: 1.08rem;
+    margin: 0 0 1rem;
+    color: var(--text);
+  }
+  p:last-child { margin-bottom: 0; }
+  .nav-back {
+    display: inline-block;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--green);
+    text-decoration: none;
+    margin-top: 3.5rem;
+  }
+  .nav-back:hover { text-decoration: underline; }
+  @media (max-width: 480px) {
+    main { padding: 3.5rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Diário da disciplina, Post 08, reflexão final</div>
+  <h1>Blog Computação Visual</h1>
+
+  <section>
+    <div class="q">De onde eu parti e onde cheguei</div>
+    <p>No primeiro post eu falei que esperava uma disciplina parecida com front-end, com elementos na tela, layout e o resultado final que a gente vê e usa. Olhando agora, eu estava bem longe. A matéria trata do que acontece antes da tela, ou seja, como uma imagem é capturada, como ela vira número e o que o computador faz com esses números pra transformar, melhorar ou até construir uma cena do zero.</p>
+    <p>Reler o post 1 foi engraçado, porque lá eu já citava RGB e pixel a pixel como se fossem novidade. Ao longo do semestre isso virou a base de quase tudo, e hoje eu olho uma foto no celular e penso numa grade cheia de valores numéricos.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="q">O que a gente viu nas aulas</div>
+    <p>Tudo começou pelo <strong>olho humano e a visão</strong>, com a luz sendo só uma faixa pequena do espectro eletromagnético. Gostei de começar por aí, porque mostra que imagem digital é uma tentativa de imitar o que o nosso olho faz, e que muita escolha técnica, como usar vermelho, verde e azul, vem daí.</p>
+    <p>Depois vieram os <strong>sensores e a aquisição de imagens</strong>, junto com <strong>amostragem e quantização</strong>. Foi aqui que eu entendi que toda imagem digital é uma aproximação. A amostragem define quantos pontos da cena a gente guarda e a quantização define quantos níveis de intensidade cada ponto pode ter. Quanto mais pixels e mais níveis, melhor a imagem, mas mais pesado fica o arquivo.</p>
+    <p>Na <strong>pipeline gráfica</strong>, o que ficou na minha cabeça foi a imagem de uma linha de montagem. A cena 3D entra como vértices e formas e vai passando por várias etapas até virar os pixels que aparecem na tela. Isso fechou com o que eu tinha comentado no post 1 sobre SDL e OpenGL construírem a imagem por dentro.</p>
+    <p>Os <strong>shaders</strong> são a parte dessa linha de montagem que a gente consegue programar. São programinhas que rodam na GPU, um pra mexer nos vértices e outro pra decidir a cor de cada pixel. Pra mim foi o momento em que computação gráfica ficou mais parecida com programar de verdade, e não só chamar função pronta.</p>
+    <p>Por último veio a <strong>filtragem espacial</strong>, que em vez de olhar um pixel sozinho olha ele junto com os vizinhos, usando uma máscara. É a mesma ideia por trás de desfocar, realçar e achar bordas numa imagem.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="q">O que eu postei e o que aprendi com cada um</div>
+    <p>O post 2 foi sobre OpenGL e leituras recomendadas. O post 3 foi sobre transformações de intensidade (negativo, log, gama e planos de bits), e ali eu percebi quanta matemática existe em coisas que parecem simples, como clarear uma foto escura.</p>
+    <p>A partir do post 4 eu mudei a proposta e comecei a trazer vídeos curtos, num tom mais leve. O do Code.org com o Kevin Systrom, sobre pixels e RGB, reforçou o básico. O da Computerphile sobre luz e sombra mostrou que a intensidade de um pixel também depende da geometria da cena. O do Sobel, sobre bordas, e o de desfoques e filtros ajudaram a fixar a ideia de vizinhança, que é justamente a filtragem espacial das aulas. Foi legal ver o mesmo conceito aparecer de jeitos diferentes, porque cada explicação clareou um pedaço dele.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="q">O que fica</div>
+    <p>A maior mudança foi no meu olhar. Antes eu via só uma imagem. Agora eu fico pensando em como ela foi capturada, quantos pixels e níveis ela tem, que filtro pode ter passado por ela e como seria desenhada numa pipeline. Essa curiosidade é o que eu mais levo da disciplina.</p>
+    <p>Também levo a certeza de que escrever o blog me ajudou a estudar. Ter que explicar o assunto com as minhas palavras, semana após semana, me obrigou a entender de verdade em vez de só reconhecer o nome das coisas. Se eu pudesse dar um recado pro eu do post 1, seria que a disciplina é bem mais técnica do que parece, e é justamente por isso que ela é boa.</p>
+  </section>
+
+  <a class="nav-back" href="post-7.html">&larr; Post anterior</a>
+</main>
+</body>
+</html>
